@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "DCWebImage"
-  s.version      = "1.0"
+  s.version      = "1.1"
   s.summary      = "图片处理"
 
   # This description is used to generate tags and improve search results.

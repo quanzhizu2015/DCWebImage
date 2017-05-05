@@ -8,8 +8,8 @@
 
 #import "UIImageView+WebImage.h"
 #import <objc/runtime.h>
-#import <UIImageView+WebCache.h>
-#import "ESWebImage.h"
+#import "UIImageView+WebCache.h"
+#import "DCWebImage.h"
 
 @implementation UIImageView (WebImage)
 
@@ -81,10 +81,10 @@
         URLString = @"";
     }
     if (!placeholderImage) {
-        placeholderImage = [ESWebImage placeholderWithSize:size];
+        placeholderImage = [DCWebImage placeholderWithSize:size];
     }
     
-    [self sd_setImageWithURL:[ESWebImage URLWithURLString:URLString imageSize:size] placeholderImage:placeholderImage completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+    [self sd_setImageWithURL:[DCWebImage URLWithURLString:URLString imageSize:size] placeholderImage:placeholderImage completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
         !completedBlock ?: completedBlock(image, error, imageURL);
     }];
 }
