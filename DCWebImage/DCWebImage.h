@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "UIImageView+WebImage.h"
+#import "UIButton+WebImage.h"
 @interface DCWebImage : NSObject
 @property (strong, nonatomic) NSURL *baseURL;
 
