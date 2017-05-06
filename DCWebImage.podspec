@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "DCWebImage"
-  s.version      = "1.2"
+  s.version      = "1.3"
   s.summary      = "图片处理"
 
   # This description is used to generate tags and improve search results.
@@ -134,6 +134,6 @@ Pod::Spec.new do |s|
     s.requires_arc = true
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
-   s.dependency 'SDWebImage/WebP' , '3.8.2'
+   s.dependency 'SDWebImage/WebP' 
 
 end
