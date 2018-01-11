@@ -19,6 +19,9 @@
 }
 
 + (NSURL *)URLWithURLString:(NSString *)URLString imageSize:(CGSize)size {
+    if ([URLString hasSuffix:@".gif"]) {
+        return [NSURL URLWithString:URLString relativeToURL:[DCWebImage shared].baseURL];;
+    }
     CGSize imageSize = CGSizeMake(size.width * [UIScreen mainScreen].scale, size.height * [UIScreen mainScreen].scale);
     if ([URLString hasPrefix:@"http"]) {
         return [NSURL URLWithString:URLString];
