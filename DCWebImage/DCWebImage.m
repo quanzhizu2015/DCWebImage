@@ -29,7 +29,9 @@
     else {
         URLString = [NSString stringWithFormat:@"%@!/format/webp", URLString];
         if (size.width > 0 && size.height > 0) {
-            URLString = [URLString  stringByAppendingFormat:@"/both/%dx%d", (int)imageSize.width, (int)imageSize.height];
+            //            URLString = [URLString  stringByAppendingFormat:@"/both/%dx%d", (int)imageSize.width, (int)imageSize.height];
+            //!/canvas/<w>x<h>/fw/<w>
+            URLString = [URLString  stringByAppendingFormat:@"/canvas/%dx%d/fw/%d/force/true", (int)imageSize.width, (int)imageSize.height, (int)imageSize.width];
         }
         return [NSURL URLWithString:URLString relativeToURL:[DCWebImage shared].baseURL];
     }
