@@ -21,8 +21,10 @@ typedef void (^ESWebImageCompleted)(UIImage *image, NSError *error, NSURL *image
  @param placeholderImage 占位图
  @param completedBlock   完成后回调
  */
-- (void)imageWithURLString:(NSString *)URLString placeholderImage:(UIImage *)placeholderImage completed:(ESWebImageCompleted)completedBlock;
+- (void)imageWithURLString:(NSString *)URLString placeholderImage:(UIImage *)placeholderImage hasCanves:(BOOL)hasCanves completed:(ESWebImageCompleted)completedBlock;
 - (void)imageWithURLString:(NSString *)URLString;
+//不填加画布背景
+- (void)noCanvesImageWithURLString:(NSString *)URLString;
 - (void)imageWithURLString:(NSString *)URLString placeholderImage:(UIImage *)placeholderImage;
 - (void)imageWithURLString:(NSString *)URLString completed:(ESWebImageCompleted)completedBlock;
 
@@ -37,10 +39,10 @@ typedef void (^ESWebImageCompleted)(UIImage *image, NSError *error, NSURL *image
  @param placeholderImage 占位图
  @param completedBlock   完成后回调
  */
-- (void)imageWithURLString:(NSString *)URLString Size:(CGSize)size placeholderImage:(UIImage *)placeholderImage completed:(ESWebImageCompleted)completedBlock;
-- (void)imageWithURLString:(NSString *)URLString Size:(CGSize)size;
-- (void)imageWithURLString:(NSString *)URLString Size:(CGSize)size completed:(ESWebImageCompleted)completedBlock;
-- (void)imageWithURLString:(NSString *)URLString Size:(CGSize)size placeholderImage:(UIImage *)placeholderImage;
+- (void)imageWithURLString:(NSString *)URLString Size:(CGSize)size placeholderImage:(UIImage *)placeholderImage hasCanves:(BOOL)hasCanves completed:(ESWebImageCompleted)completedBlock;
+- (void)imageWithURLString:(NSString *)URLString Size:(CGSize)size hasCanves:(BOOL)hasCanves;
+- (void)imageWithURLString:(NSString *)URLString Size:(CGSize)size hasCanves:(BOOL)hasCanves completed:(ESWebImageCompleted)completedBlock;
+- (void)imageWithURLString:(NSString *)URLString Size:(CGSize)size placeholderImage:(UIImage *)placeholderImage hasCanves:(BOOL)hasCanves;
 
 /**
  加载商品图片。 从上至下，截取最大方形

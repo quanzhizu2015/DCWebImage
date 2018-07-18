@@ -84,7 +84,7 @@
         placeholderImage = [DCWebImage placeholderWithSize:size];
     }
     
-    [self sd_setImageWithURL:[DCWebImage URLWithURLString:URLString imageSize:size] forState:UIControlStateNormal placeholderImage:placeholderImage completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+    [self sd_setImageWithURL:[DCWebImage URLWithURLString:URLString imageSize:size hasCanves:NO] forState:UIControlStateNormal placeholderImage:placeholderImage completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
         !completedBlock ?: completedBlock(image, error, imageURL);
     }];
 }

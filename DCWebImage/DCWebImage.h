@@ -14,7 +14,7 @@
 
 + (instancetype)shared;
 
-+ (NSURL *)URLWithURLString:(NSString *)URLString imageSize:(CGSize)size;
++ (NSURL *)URLWithURLString:(NSString *)URLString imageSize:(CGSize)size hasCanves:(BOOL)hasCanves;
 
 + (UIImage *)placeholderWithSize:(CGSize)size;
 

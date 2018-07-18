@@ -18,7 +18,7 @@
     return object;
 }
 
-+ (NSURL *)URLWithURLString:(NSString *)URLString imageSize:(CGSize)size {
++ (NSURL *)URLWithURLString:(NSString *)URLString imageSize:(CGSize)size hasCanves:(BOOL)hasCanves {
     if ([URLString hasSuffix:@".gif"]) {
         return [NSURL URLWithString:URLString relativeToURL:[DCWebImage shared].baseURL];;
     }
@@ -29,13 +29,18 @@
     else {
         URLString = [NSString stringWithFormat:@"%@!/format/webp", URLString];
         if (size.width > 0 && size.height > 0) {
-            //            URLString = [URLString  stringByAppendingFormat:@"/both/%dx%d", (int)imageSize.width, (int)imageSize.height];
+           URLString = [URLString  stringByAppendingFormat:@"/both/%dx%d", (int)imageSize.width, (int)imageSize.height];
             //!/canvas/<w>x<h>/fw/<w>
-            URLString = [URLString  stringByAppendingFormat:@"/canvas/%dx%d/fw/%d/force/true/cvscolor/FFFFFFFF", (int)imageSize.width, (int)imageSize.height, (int)imageSize.width];
+            if (hasCanves) {
+                 URLString = [URLString  stringByAppendingFormat:@"/canvas/%dx%d/fw/%d/force/true/cvscolor/FFFFFFFF", (int)imageSize.width, (int)imageSize.height, (int)imageSize.width];
+            }
+          
         }
         return [NSURL URLWithString:URLString relativeToURL:[DCWebImage shared].baseURL];
     }
 }
+
+
 
 + (UIImage *)placeholderWithSize:(CGSize)size {
     if (CGSizeEqualToSize(size, CGSizeZero)) {
