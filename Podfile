@@ -3,5 +3,6 @@ use_frameworks!
 
 target 'DCWebImage' do
     #图片加载
-  pod 'SDWebImage/WebP',  ‘4.3.3’
+  pod 'SDWebImage' , '4.4.1'
+  #pod 'SDWebImage/WebP',  ‘4.3.3’
 end
