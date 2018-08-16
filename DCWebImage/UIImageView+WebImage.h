@@ -23,10 +23,14 @@ typedef void (^ESWebImageCompleted)(UIImage *image, NSError *error, NSURL *image
  */
 - (void)imageWithURLString:(NSString *)URLString placeholderImage:(UIImage *)placeholderImage hasCanves:(BOOL)hasCanves completed:(ESWebImageCompleted)completedBlock;
 - (void)imageWithURLString:(NSString *)URLString;
-//不填加画布背景
-- (void)noCanvesImageWithURLString:(NSString *)URLString;
 - (void)imageWithURLString:(NSString *)URLString placeholderImage:(UIImage *)placeholderImage;
 - (void)imageWithURLString:(NSString *)URLString completed:(ESWebImageCompleted)completedBlock;
+//不填加画布背景
+- (void)noCanvesImageWithURLString:(NSString *)URLString;
+- (void)noCanvesImageWithURLString:(NSString *)URLString placeholderImage:(UIImage *)placeholderImage;
+- (void)noCanvesImageWithURLString:(NSString *)URLString completed:(ESWebImageCompleted)completedBlock;
+
+
 
 
 /**

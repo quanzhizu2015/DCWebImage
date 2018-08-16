@@ -43,15 +43,23 @@
 - (void)imageWithURLString:(NSString *)URLString; {
     [self imageWithURLString:URLString completed:NULL];
 }
-- (void)noCanvesImageWithURLString:(NSString *)URLString; {
-     [self imageWithURLString:URLString placeholderImage:NULL hasCanves:NO completed:nil];
-}
 - (void)imageWithURLString:(NSString *)URLString placeholderImage:(UIImage *)placeholderImage{
     [self imageWithURLString:URLString placeholderImage:placeholderImage hasCanves:YES completed:NULL];
 }
 - (void)imageWithURLString:(NSString *)URLString completed:(ESWebImageCompleted)completedBlock; {
     [self imageWithURLString:URLString placeholderImage:NULL hasCanves:YES completed:completedBlock];
 }
+
+- (void)noCanvesImageWithURLString:(NSString *)URLString; {
+    [self imageWithURLString:URLString placeholderImage:NULL hasCanves:NO completed:nil];
+}
+- (void)noCanvesImageWithURLString:(NSString *)URLString placeholderImage:(UIImage *)placeholderImage{
+    [self imageWithURLString:URLString placeholderImage:placeholderImage hasCanves:NO completed:NULL];
+}
+- (void)noCanvesImageWithURLString:(NSString *)URLString completed:(ESWebImageCompleted)completedBlock; {
+    [self imageWithURLString:URLString placeholderImage:NULL hasCanves:NO completed:completedBlock];
+}
+
 - (void)imageWithURLString:(NSString *)URLString placeholderImage:(UIImage *)placeholderImage hasCanves:(BOOL)hasCanves completed:(ESWebImageCompleted)completedBlock; {
     if (CGSizeEqualToSize(self.frame.size, CGSizeZero)) {
         [self layoutIfNeeded];
